@@ -1,0 +1,141 @@
+{
+  "generatedAt": "2026-10-16T20:41:27.605Z",
+  "benchVersion": 1,
+  "complete": true,
+  "players": [
+    "random",
+    "facts",
+    "greedy",
+    "minimax"
+  ],
+  "settings": {
+    "gamesPerPair": 24,
+    "maxPlies": 300,
+    "moveTimeoutMs": 30000
+  },
+  "entries": [
+    {
+      "player": "minimax",
+      "name": "Minimax (3 ply)",
+      "kind": "rules",
+      "rating": 2065,
+      "margin": 102,
+      "games": 72,
+      "scorePct": 97.9,
+      "winPct": 97.2,
+      "drawPct": 1.4,
+      "lossPct": 1.4,
+      "fallbackPct": 0,
+      "invalidPct": 0,
+      "meanLatencyMs": 9,
+      "costPerGame": 0
+    },
+    {
+      "player": "greedy",
+      "name": "Greedy (1 ply)",
+      "kind": "rules",
+      "rating": 1683,
+      "margin": 79,
+      "games": 72,
+      "scorePct": 65.3,
+      "winPct": 63.9,
+      "drawPct": 2.8,
+      "lossPct": 33.3,
+      "fallbackPct": 0,
+      "invalidPct": 0,
+      "meanLatencyMs": 0,
+      "costPerGame": 0
+    },
+    {
+      "player": "facts",
+      "name": "Fact reader",
+      "kind": "rules",
+      "rating": 1382,
+      "margin": 77,
+      "games": 72,
+      "scorePct": 36.8,
+      "winPct": 36.1,
+      "drawPct": 1.4,
+      "lossPct": 62.5,
+      "fallbackPct": 0,
+      "invalidPct": 0,
+      "meanLatencyMs": 0,
+      "costPerGame": 0
+    },
+    {
+      "player": "random",
+      "name": "Random mover",
+      "kind": "rules",
+      "rating": 870,
+      "margin": 61,
+      "games": 72,
+      "scorePct": 0,
+      "winPct": 0,
+      "drawPct": 0,
+      "lossPct": 100,
+      "fallbackPct": 0,
+      "invalidPct": 0,
+      "meanLatencyMs": 0,
+      "costPerGame": 0
+    }
+  ],
+  "headToHead": {
+    "random": {
+      "facts": {
+        "scorePct": 0,
+        "games": 24
+      },
+      "greedy": {
+        "scorePct": 0,
+        "games": 24
+      },
+      "minimax": {
+        "scorePct": 0,
+        "games": 24
+      }
+    },
+    "facts": {
+      "random": {
+        "scorePct": 100,
+        "games": 24
+      },
+      "greedy": {
+        "scorePct": 10.4,
+        "games": 24
+      },
+      "minimax": {
+        "scorePct": 0,
+        "games": 24
+      }
+    },
+    "greedy": {
+      "random": {
+        "scorePct": 100,
+        "games": 24
+      },
+      "facts": {
+        "scorePct": 89.6,
+        "games": 24
+      },
+      "minimax": {
+        "scorePct": 6.3,
+        "games": 24
+      }
+    },
+    "minimax": {
+      "random": {
+        "scorePct": 100,
+        "games": 24
+      },
+      "facts": {
+        "scorePct": 100,
+        "games": 24
+      },
+      "greedy": {
+        "scorePct": 93.8,
+        "games": 24
+      }
+    }
+  },
+  "skipped": []
+}

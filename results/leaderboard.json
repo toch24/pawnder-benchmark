@@ -1,0 +1,221 @@
+{
+  "generatedAt": "2026-10-16T20:40:43.441Z",
+  "benchVersion": 1,
+  "settings": {
+    "gamesPerOpponent": 24,
+    "opponents": [
+      "random",
+      "greedy",
+      "minimax"
+    ],
+    "maxPlies": 300,
+    "moveTimeoutMs": 30000
+  },
+  "entries": [
+    {
+      "player": "minimax",
+      "name": "Minimax (3 ply)",
+      "kind": "rules",
+      "games": 72,
+      "scorePct": 78.5,
+      "stdErrorPct": 3.5,
+      "vs": {
+        "random": {
+          "games": 24,
+          "wins": 24,
+          "draws": 0,
+          "losses": 0,
+          "winPct": 100,
+          "drawPct": 0,
+          "lossPct": 0,
+          "scorePct": 100,
+          "stdErrorPct": 3.8
+        },
+        "greedy": {
+          "games": 24,
+          "wins": 22,
+          "draws": 1,
+          "losses": 1,
+          "winPct": 91.7,
+          "drawPct": 4.2,
+          "lossPct": 4.2,
+          "scorePct": 93.8,
+          "stdErrorPct": 5.6
+        },
+        "minimax": {
+          "games": 24,
+          "wins": 6,
+          "draws": 8,
+          "losses": 10,
+          "winPct": 25,
+          "drawPct": 33.3,
+          "lossPct": 41.7,
+          "scorePct": 41.7,
+          "stdErrorPct": 8.2
+        }
+      },
+      "winPct": 72.2,
+      "drawPct": 12.5,
+      "lossPct": 15.3,
+      "fallbackPct": 0,
+      "invalidPct": 0,
+      "meanLatencyMs": 7,
+      "costPerGame": 0,
+      "meanPlies": 114.4
+    },
+    {
+      "player": "greedy",
+      "name": "Greedy (1 ply)",
+      "kind": "rules",
+      "games": 72,
+      "scorePct": 48.6,
+      "stdErrorPct": 3.6,
+      "vs": {
+        "random": {
+          "games": 24,
+          "wins": 24,
+          "draws": 0,
+          "losses": 0,
+          "winPct": 100,
+          "drawPct": 0,
+          "lossPct": 0,
+          "scorePct": 100,
+          "stdErrorPct": 3.8
+        },
+        "greedy": {
+          "games": 24,
+          "wins": 9,
+          "draws": 4,
+          "losses": 11,
+          "winPct": 37.5,
+          "drawPct": 16.7,
+          "lossPct": 45.8,
+          "scorePct": 45.8,
+          "stdErrorPct": 9.2
+        },
+        "minimax": {
+          "games": 24,
+          "wins": 0,
+          "draws": 0,
+          "losses": 24,
+          "winPct": 0,
+          "drawPct": 0,
+          "lossPct": 100,
+          "scorePct": 0,
+          "stdErrorPct": 3.8
+        }
+      },
+      "winPct": 45.8,
+      "drawPct": 5.6,
+      "lossPct": 48.6,
+      "fallbackPct": 0,
+      "invalidPct": 0,
+      "meanLatencyMs": 0,
+      "costPerGame": 0,
+      "meanPlies": 89.4
+    },
+    {
+      "player": "facts",
+      "name": "Fact reader",
+      "kind": "rules",
+      "games": 72,
+      "scorePct": 35.4,
+      "stdErrorPct": 2.6,
+      "vs": {
+        "random": {
+          "games": 24,
+          "wins": 24,
+          "draws": 0,
+          "losses": 0,
+          "winPct": 100,
+          "drawPct": 0,
+          "lossPct": 0,
+          "scorePct": 100,
+          "stdErrorPct": 3.8
+        },
+        "greedy": {
+          "games": 24,
+          "wins": 1,
+          "draws": 1,
+          "losses": 22,
+          "winPct": 4.2,
+          "drawPct": 4.2,
+          "lossPct": 91.7,
+          "scorePct": 6.3,
+          "stdErrorPct": 5.6
+        },
+        "minimax": {
+          "games": 24,
+          "wins": 0,
+          "draws": 0,
+          "losses": 24,
+          "winPct": 0,
+          "drawPct": 0,
+          "lossPct": 100,
+          "scorePct": 0,
+          "stdErrorPct": 3.8
+        }
+      },
+      "winPct": 34.7,
+      "drawPct": 1.4,
+      "lossPct": 63.9,
+      "fallbackPct": 0,
+      "invalidPct": 0,
+      "meanLatencyMs": 0,
+      "costPerGame": 0,
+      "meanPlies": 66
+    },
+    {
+      "player": "random",
+      "name": "Random mover",
+      "kind": "rules",
+      "games": 72,
+      "scorePct": 17.4,
+      "stdErrorPct": 2.5,
+      "vs": {
+        "random": {
+          "games": 24,
+          "wins": 3,
+          "draws": 19,
+          "losses": 2,
+          "winPct": 12.5,
+          "drawPct": 79.2,
+          "lossPct": 8.3,
+          "scorePct": 52.1,
+          "stdErrorPct": 5.2
+        },
+        "greedy": {
+          "games": 24,
+          "wins": 0,
+          "draws": 0,
+          "losses": 24,
+          "winPct": 0,
+          "drawPct": 0,
+          "lossPct": 100,
+          "scorePct": 0,
+          "stdErrorPct": 3.8
+        },
+        "minimax": {
+          "games": 24,
+          "wins": 0,
+          "draws": 0,
+          "losses": 24,
+          "winPct": 0,
+          "drawPct": 0,
+          "lossPct": 100,
+          "scorePct": 0,
+          "stdErrorPct": 3.8
+        }
+      },
+      "winPct": 4.2,
+      "drawPct": 26.4,
+      "lossPct": 69.4,
+      "fallbackPct": 0,
+      "invalidPct": 0,
+      "meanLatencyMs": 0,
+      "costPerGame": 0,
+      "meanPlies": 113.2
+    }
+  ],
+  "skipped": []
+}

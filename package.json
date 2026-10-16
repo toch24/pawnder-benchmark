@@ -1,0 +1,23 @@
+{
+  "name": "pawnder-benchmark",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "bench": "node --env-file-if-exists=.env scripts/bench.ts",
+    "leaderboard": "node --env-file-if-exists=.env scripts/bench.ts --leaderboard",
+    "versus": "node --env-file-if-exists=.env scripts/versus.ts",
+    "models": "node --env-file-if-exists=.env scripts/models.ts",
+    "verify": "node scripts/verify.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "chess.js": "^1.4.0",
+    "typescript": "^5.9.0",
+    "vitest": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}
