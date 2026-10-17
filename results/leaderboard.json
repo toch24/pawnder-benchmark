@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T07:44:33.881Z",
+  "generatedAt": "2026-10-17T20:30:19.695Z",
   "benchVersion": 1,
   "settings": {
     "gamesPerOpponent": 24,
@@ -59,7 +59,7 @@
       "lossPct": 15.3,
       "fallbackPct": 0,
       "invalidPct": 0,
-      "meanLatencyMs": 7,
+      "meanLatencyMs": 8,
       "costPerGame": 0,
       "meanPlies": 114.4
     },
@@ -119,8 +119,8 @@
       "name": "mercury-decide",
       "kind": "decision",
       "games": 72,
-      "scorePct": 42.4,
-      "stdErrorPct": 3.2,
+      "scorePct": 43.8,
+      "stdErrorPct": 3.4,
       "vs": {
         "random": {
           "games": 24,
@@ -135,14 +135,14 @@
         },
         "greedy": {
           "games": 24,
-          "wins": 4,
-          "draws": 5,
+          "wins": 6,
+          "draws": 3,
           "losses": 15,
-          "winPct": 16.7,
-          "drawPct": 20.8,
+          "winPct": 25,
+          "drawPct": 12.5,
           "lossPct": 62.5,
-          "scorePct": 27.1,
-          "stdErrorPct": 7.9
+          "scorePct": 31.3,
+          "stdErrorPct": 8.7
         },
         "minimax": {
           "games": 24,
@@ -156,14 +156,65 @@
           "stdErrorPct": 3.8
         }
       },
-      "winPct": 38.9,
-      "drawPct": 6.9,
+      "winPct": 41.7,
+      "drawPct": 4.2,
       "lossPct": 54.2,
       "fallbackPct": 0,
       "invalidPct": 0,
-      "meanLatencyMs": 643,
-      "costPerGame": 0.00154,
-      "meanPlies": 89.8
+      "meanLatencyMs": 350,
+      "costPerGame": 0.00145,
+      "meanPlies": 85.2
+    },
+    {
+      "player": "jev-1-14",
+      "name": "jev-1.14v",
+      "kind": "decision",
+      "games": 72,
+      "scorePct": 41,
+      "stdErrorPct": 3.3,
+      "vs": {
+        "random": {
+          "games": 24,
+          "wins": 23,
+          "draws": 1,
+          "losses": 0,
+          "winPct": 95.8,
+          "drawPct": 4.2,
+          "lossPct": 0,
+          "scorePct": 97.9,
+          "stdErrorPct": 4.2
+        },
+        "greedy": {
+          "games": 24,
+          "wins": 4,
+          "draws": 4,
+          "losses": 16,
+          "winPct": 16.7,
+          "drawPct": 16.7,
+          "lossPct": 66.7,
+          "scorePct": 25,
+          "stdErrorPct": 8
+        },
+        "minimax": {
+          "games": 24,
+          "wins": 0,
+          "draws": 0,
+          "losses": 24,
+          "winPct": 0,
+          "drawPct": 0,
+          "lossPct": 100,
+          "scorePct": 0,
+          "stdErrorPct": 3.8
+        }
+      },
+      "winPct": 37.5,
+      "drawPct": 6.9,
+      "lossPct": 55.6,
+      "fallbackPct": 0,
+      "invalidPct": 0,
+      "meanLatencyMs": 214,
+      "costPerGame": 0.003,
+      "meanPlies": 79.9
     },
     {
       "player": "gpt-6-luna-decisions",
@@ -212,7 +263,7 @@
       "lossPct": 58.3,
       "fallbackPct": 4,
       "invalidPct": 0,
-      "meanLatencyMs": 423,
+      "meanLatencyMs": 315,
       "costPerGame": 0.00558,
       "meanPlies": 85.5
     },
@@ -221,7 +272,7 @@
       "name": "pplx-decider-v1-2",
       "kind": "decision",
       "games": 72,
-      "scorePct": 38.2,
+      "scorePct": 37.5,
       "stdErrorPct": 2.9,
       "vs": {
         "random": {
@@ -249,23 +300,23 @@
         "minimax": {
           "games": 24,
           "wins": 0,
-          "draws": 1,
-          "losses": 23,
+          "draws": 0,
+          "losses": 24,
           "winPct": 0,
-          "drawPct": 4.2,
-          "lossPct": 95.8,
-          "scorePct": 2.1,
-          "stdErrorPct": 4.2
+          "drawPct": 0,
+          "lossPct": 100,
+          "scorePct": 0,
+          "stdErrorPct": 3.8
         }
       },
       "winPct": 36.1,
-      "drawPct": 4.2,
-      "lossPct": 59.7,
-      "fallbackPct": 2.7,
+      "drawPct": 2.8,
+      "lossPct": 61.1,
+      "fallbackPct": 0,
       "invalidPct": 0,
-      "meanLatencyMs": 451,
-      "costPerGame": 0.00087,
-      "meanPlies": 65.3
+      "meanLatencyMs": 399,
+      "costPerGame": 0.00095,
+      "meanPlies": 70.8
     },
     {
       "player": "drex-v2-0",
@@ -314,60 +365,9 @@
       "lossPct": 61.1,
       "fallbackPct": 0,
       "invalidPct": 0,
-      "meanLatencyMs": 364,
+      "meanLatencyMs": 411,
       "costPerGame": 0.0029,
       "meanPlies": 75.3
-    },
-    {
-      "player": "jev-1-14",
-      "name": "jev-1.14v",
-      "kind": "decision",
-      "games": 72,
-      "scorePct": 36.8,
-      "stdErrorPct": 3,
-      "vs": {
-        "random": {
-          "games": 24,
-          "wins": 22,
-          "draws": 2,
-          "losses": 0,
-          "winPct": 91.7,
-          "drawPct": 8.3,
-          "lossPct": 0,
-          "scorePct": 95.8,
-          "stdErrorPct": 4.6
-        },
-        "greedy": {
-          "games": 24,
-          "wins": 2,
-          "draws": 3,
-          "losses": 19,
-          "winPct": 8.3,
-          "drawPct": 12.5,
-          "lossPct": 79.2,
-          "scorePct": 14.6,
-          "stdErrorPct": 6.8
-        },
-        "minimax": {
-          "games": 24,
-          "wins": 0,
-          "draws": 0,
-          "losses": 24,
-          "winPct": 0,
-          "drawPct": 0,
-          "lossPct": 100,
-          "scorePct": 0,
-          "stdErrorPct": 3.8
-        }
-      },
-      "winPct": 33.3,
-      "drawPct": 6.9,
-      "lossPct": 59.7,
-      "fallbackPct": 0,
-      "invalidPct": 0,
-      "meanLatencyMs": 215,
-      "costPerGame": 0.00286,
-      "meanPlies": 76.8
     },
     {
       "player": "facts",
@@ -421,55 +421,106 @@
       "meanPlies": 66
     },
     {
-      "player": "d1-ultra",
-      "name": "d1-ultra",
+      "player": "span-02",
+      "name": "span-02",
       "kind": "decision",
       "games": 72,
-      "scorePct": 34.7,
-      "stdErrorPct": 2.6,
+      "scorePct": 32,
+      "stdErrorPct": 2.7,
       "vs": {
         "random": {
           "games": 24,
-          "wins": 22,
-          "draws": 2,
+          "wins": 20,
+          "draws": 4,
           "losses": 0,
-          "winPct": 91.7,
-          "drawPct": 8.3,
+          "winPct": 83.3,
+          "drawPct": 16.7,
           "lossPct": 0,
-          "scorePct": 95.8,
-          "stdErrorPct": 4.6
+          "scorePct": 91.7,
+          "stdErrorPct": 5
         },
         "greedy": {
           "games": 24,
-          "wins": 0,
-          "draws": 3,
-          "losses": 21,
-          "winPct": 0,
-          "drawPct": 12.5,
-          "lossPct": 87.5,
-          "scorePct": 6.3,
-          "stdErrorPct": 4.8
+          "wins": 1,
+          "draws": 0,
+          "losses": 23,
+          "winPct": 4.2,
+          "drawPct": 0,
+          "lossPct": 95.8,
+          "scorePct": 4.2,
+          "stdErrorPct": 5.3
         },
         "minimax": {
           "games": 24,
           "wins": 0,
-          "draws": 1,
-          "losses": 23,
+          "draws": 0,
+          "losses": 24,
           "winPct": 0,
-          "drawPct": 4.2,
-          "lossPct": 95.8,
-          "scorePct": 2.1,
-          "stdErrorPct": 4.2
+          "drawPct": 0,
+          "lossPct": 100,
+          "scorePct": 0,
+          "stdErrorPct": 3.8
         }
       },
-      "winPct": 30.6,
-      "drawPct": 8.3,
-      "lossPct": 61.1,
-      "fallbackPct": 6.6,
+      "winPct": 29.2,
+      "drawPct": 5.6,
+      "lossPct": 65.3,
+      "fallbackPct": 0,
       "invalidPct": 0,
-      "meanLatencyMs": 286,
-      "costPerGame": 0.00177,
-      "meanPlies": 76.3
+      "meanLatencyMs": 356,
+      "costPerGame": 0.00036,
+      "meanPlies": 63.5
+    },
+    {
+      "player": "kev-4b",
+      "name": "kev-4b",
+      "kind": "decision",
+      "games": 72,
+      "scorePct": 31.3,
+      "stdErrorPct": 2.4,
+      "vs": {
+        "random": {
+          "games": 24,
+          "wins": 21,
+          "draws": 3,
+          "losses": 0,
+          "winPct": 87.5,
+          "drawPct": 12.5,
+          "lossPct": 0,
+          "scorePct": 93.8,
+          "stdErrorPct": 4.8
+        },
+        "greedy": {
+          "games": 24,
+          "wins": 0,
+          "draws": 0,
+          "losses": 24,
+          "winPct": 0,
+          "drawPct": 0,
+          "lossPct": 100,
+          "scorePct": 0,
+          "stdErrorPct": 3.8
+        },
+        "minimax": {
+          "games": 24,
+          "wins": 0,
+          "draws": 0,
+          "losses": 24,
+          "winPct": 0,
+          "drawPct": 0,
+          "lossPct": 100,
+          "scorePct": 0,
+          "stdErrorPct": 3.8
+        }
+      },
+      "winPct": 29.2,
+      "drawPct": 4.2,
+      "lossPct": 66.7,
+      "fallbackPct": 0,
+      "invalidPct": 0,
+      "meanLatencyMs": 623,
+      "costPerGame": 0.00168,
+      "meanPlies": 58.7
     },
     {
       "player": "clef",
@@ -516,143 +567,41 @@
       "winPct": 27.8,
       "drawPct": 6.9,
       "lossPct": 65.3,
-      "fallbackPct": 0.2,
+      "fallbackPct": 0.5,
       "invalidPct": 0,
-      "meanLatencyMs": 433,
-      "costPerGame": 0.00248,
-      "meanPlies": 62.9
-    },
-    {
-      "player": "kev-4b",
-      "name": "kev-4b",
-      "kind": "decision",
-      "games": 72,
-      "scorePct": 30.6,
-      "stdErrorPct": 2.4,
-      "vs": {
-        "random": {
-          "games": 24,
-          "wins": 20,
-          "draws": 4,
-          "losses": 0,
-          "winPct": 83.3,
-          "drawPct": 16.7,
-          "lossPct": 0,
-          "scorePct": 91.7,
-          "stdErrorPct": 5
-        },
-        "greedy": {
-          "games": 24,
-          "wins": 0,
-          "draws": 0,
-          "losses": 24,
-          "winPct": 0,
-          "drawPct": 0,
-          "lossPct": 100,
-          "scorePct": 0,
-          "stdErrorPct": 3.8
-        },
-        "minimax": {
-          "games": 24,
-          "wins": 0,
-          "draws": 0,
-          "losses": 24,
-          "winPct": 0,
-          "drawPct": 0,
-          "lossPct": 100,
-          "scorePct": 0,
-          "stdErrorPct": 3.8
-        }
-      },
-      "winPct": 27.8,
-      "drawPct": 5.6,
-      "lossPct": 66.7,
-      "fallbackPct": 0,
-      "invalidPct": 0,
-      "meanLatencyMs": 591,
-      "costPerGame": 0.00178,
-      "meanPlies": 62.1
-    },
-    {
-      "player": "span-02",
-      "name": "span-02",
-      "kind": "decision",
-      "games": 72,
-      "scorePct": 29.9,
-      "stdErrorPct": 2.5,
-      "vs": {
-        "random": {
-          "games": 24,
-          "wins": 19,
-          "draws": 5,
-          "losses": 0,
-          "winPct": 79.2,
-          "drawPct": 20.8,
-          "lossPct": 0,
-          "scorePct": 89.6,
-          "stdErrorPct": 5.2
-        },
-        "greedy": {
-          "games": 24,
-          "wins": 0,
-          "draws": 0,
-          "losses": 24,
-          "winPct": 0,
-          "drawPct": 0,
-          "lossPct": 100,
-          "scorePct": 0,
-          "stdErrorPct": 3.8
-        },
-        "minimax": {
-          "games": 24,
-          "wins": 0,
-          "draws": 0,
-          "losses": 24,
-          "winPct": 0,
-          "drawPct": 0,
-          "lossPct": 100,
-          "scorePct": 0,
-          "stdErrorPct": 3.8
-        }
-      },
-      "winPct": 26.4,
-      "drawPct": 6.9,
-      "lossPct": 66.7,
-      "fallbackPct": 0,
-      "invalidPct": 0,
-      "meanLatencyMs": 336,
-      "costPerGame": 0.00037,
-      "meanPlies": 65.3
+      "meanLatencyMs": 357,
+      "costPerGame": 0.00249,
+      "meanPlies": 64.2
     },
     {
       "player": "microsoft-decision-1",
       "name": "microsoft-decision-1",
       "kind": "decision",
       "games": 72,
-      "scorePct": 29.2,
-      "stdErrorPct": 2.5,
+      "scorePct": 27.1,
+      "stdErrorPct": 2.9,
       "vs": {
         "random": {
           "games": 24,
-          "wins": 18,
-          "draws": 6,
+          "wins": 13,
+          "draws": 11,
           "losses": 0,
-          "winPct": 75,
-          "drawPct": 25,
+          "winPct": 54.2,
+          "drawPct": 45.8,
           "lossPct": 0,
-          "scorePct": 87.5,
-          "stdErrorPct": 5.4
+          "scorePct": 77.1,
+          "stdErrorPct": 5.7
         },
         "greedy": {
           "games": 24,
-          "wins": 0,
+          "wins": 1,
           "draws": 0,
-          "losses": 24,
-          "winPct": 0,
+          "losses": 23,
+          "winPct": 4.2,
           "drawPct": 0,
-          "lossPct": 100,
-          "scorePct": 0,
-          "stdErrorPct": 3.8
+          "lossPct": 95.8,
+          "scorePct": 4.2,
+          "stdErrorPct": 5.3
         },
         "minimax": {
           "games": 24,
@@ -666,14 +615,14 @@
           "stdErrorPct": 3.8
         }
       },
-      "winPct": 25,
-      "drawPct": 8.3,
-      "lossPct": 66.7,
-      "fallbackPct": 2.9,
+      "winPct": 19.4,
+      "drawPct": 15.3,
+      "lossPct": 65.3,
+      "fallbackPct": 2.5,
       "invalidPct": 0,
-      "meanLatencyMs": 329,
-      "costPerGame": 0.00134,
-      "meanPlies": 53.2
+      "meanLatencyMs": 327,
+      "costPerGame": 0.00125,
+      "meanPlies": 50.8
     },
     {
       "player": "random",
@@ -729,12 +678,12 @@
   ],
   "skipped": [
     {
-      "player": "classify-1",
-      "reason": "HTTP 400: ScaleDown state must be a string or an object with only text, document, and document_mime_type, including text or document"
+      "player": "d1-ultra",
+      "reason": "d1-ultra failed 5 calls in a row (last: HTTP 422: HTTP 422: {\"error\":{\"message\":\"A Choice needs at least 2 options.\",\"type\":\"invalid_request_error\",\"param\":\"que); its games were stopped so random fallback moves don't count as its play"
     },
     {
-      "player": "tev1-4b-experimental",
-      "reason": "tev1-4b-experimental failed 5 calls in a row (last: HTTP 400: Tev1 needs between 2 and 20 options per question; question \"move\" has 32); its games were stopped so random fallback moves don't count as its play"
+      "player": "classify-1",
+      "reason": "HTTP 400: ScaleDown state must be a string or an object with only text, document, and document_mime_type, including text or document"
     },
     {
       "player": "solar-decide",
