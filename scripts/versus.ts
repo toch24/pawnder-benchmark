@@ -1,19 +1,20 @@
 // Versus: every pair of players over the same games, rated together.
 // Run: npm run versus -- systemone:jev-latest ollama:llama3.1:8b     two models (ids or provider:model specs)
 //      npm run versus                                                  the two in MODELS (.env), else pick them
-//      npm run versus -- --players all                                 every player: the official round robin
+//      npm run versus -- --players all                                 every model (not the rule-based baselines): the official round robin
 // Also --endpoint id=http://… (repeatable), --games 24, --parallel (1 with a local model, else 4), --timeout, --out,
 // --resume (keep the pairs an earlier, interrupted run of the same players finished, and play the rest).
+// A player that can't answer (5 failed calls in a row) is dropped with its pairs, and the run goes on without it.
 // Named players write to runs/<a>-vs-<b>/, --players all to results/: versus.json, VERSUS.md, versus.pgn and each
 // pair's recording in versus-games/. Results are rewritten after every finished pair.
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { canAsk, defaultParallel, loadPool, modelsFromEnv, pickPlayers, readiness, resolvePlayer } from '../src/cli.ts';
 import { BENCH_VERSION, RULES } from '../src/leaderboard.ts';
 import { endpointPlayer, ID_PATTERN, type Player } from '../src/players.ts';
 import { inBatches, PlayerFailedError } from '../src/run.ts';
-import { clearPairs, pairings, pairRecording, playMatch, readPair, renderVersusMarkdown, replayPair, summarizeVersus, toPgn, writePair, type MatchGame, type Versus } from '../src/versus.ts';
+import { clearPairs, pairFile, pairings, pairRecording, playMatch, readPair, renderVersusMarkdown, replayPair, summarizeVersus, toPgn, writePair, type MatchGame, type Versus } from '../src/versus.ts';
 
 const { values, positionals } = parseArgs({
   allowPositionals: true,
@@ -59,7 +60,7 @@ const named = [...positionals, ...(values.players && !everyone ? values.players.
 const resolve = (names: string[]) => attempt(() => names.map((n) => resolvePlayer(n, known)));
 const USAGE = 'name two players: npm run versus -- <model> <model> (ids, or models like systemone:jev-latest, ollama:llama3.1:8b), or set MODELS in .env';
 let picked: Player[];
-if (everyone) picked = [...known, ...fromArgs];
+if (everyone) picked = [...known.filter((p) => p.kind !== 'rules'), ...fromArgs];
 else if (named.length || fromArgs.length) picked = [...resolve(named), ...fromArgs];
 else if (modelsFromEnv().length) picked = resolve(modelsFromEnv());
 else if (canAsk()) picked = await pickPlayers(2, known);
@@ -108,32 +109,59 @@ if (values.resume) {
   console.log(`resuming: ${done.size} of ${pairs.length} pairs already played`);
 } else clearPairs(gamesDir);
 
+/** Players that stopped answering mid-run; their pairs are left out of the results. */
+const dropped = new Set<string>();
+const active = () => ready.filter((p) => !dropped.has(p.id));
+
 function write(complete: boolean): Versus {
-  const finished = [...done.keys()].sort((x, y) => x - y).flatMap((i) => done.get(i)!);
+  const players = active();
+  const finished = [...done.keys()].sort((x, y) => x - y).filter((i) => !pairs[i].some((p) => dropped.has(p.id))).flatMap((i) => done.get(i)!);
   const versus: Versus = {
     generatedAt: new Date().toISOString(),
     benchVersion: BENCH_VERSION,
     complete,
-    players: ready.map((p) => p.id),
+    players: players.map((p) => p.id),
     settings,
-    ...summarizeVersus(ready, finished),
+    ...summarizeVersus(players, finished),
     skipped,
   };
   mkdirSync(dir, { recursive: true });
   writeFileSync(out, `${JSON.stringify(versus, null, 2)}\n`);
   writeFileSync(join(dir, 'VERSUS.md'), renderVersusMarkdown(versus));
-  writeFileSync(join(dir, 'versus.pgn'), toPgn(finished, Object.fromEntries(ready.map((p) => [p.id, p.name]))));
+  writeFileSync(join(dir, 'versus.pgn'), toPgn(finished, Object.fromEntries(players.map((p) => [p.id, p.name]))));
   return versus;
 }
 
 const todo = pairs.map((_, i) => i).filter((i) => !done.has(i));
-console.log(`versus: ${ready.length} players, ${pairs.length} pairs × ${games} games, ${RULES.maxPlies}-move cap, ${timeoutMs} ms per move, ${parallel} at a time`);
 const partial = new Map<number, MatchGame[]>();
+function drop(err: PlayerFailedError) {
+  if (dropped.has(err.player)) return;
+  dropped.add(err.player);
+  skipped.push({ player: err.player, reason: err.message });
+  console.log(`  ${name(err.player)} dropped: ${err.message}`);
+  for (const [i, [a, b]] of pairs.entries()) {
+    if (a.id !== err.player && b.id !== err.player) continue;
+    partial.delete(i);
+    rmSync(join(gamesDir, pairFile(a.id, b.id)), { force: true });
+  }
+}
+console.log(`versus: ${ready.length} players, ${pairs.length} pairs × ${games} games, ${RULES.maxPlies}-move cap, ${timeoutMs} ms per move, ${parallel} at a time`);
 try {
   await inBatches(todo.length * games, parallel, async (n) => {
     const pair = todo[Math.floor(n / games)];
     const [a, b] = pairs[pair];
-    const g = await playMatch(a, b, n % games, { timeoutMs });
+    if (dropped.has(a.id) || dropped.has(b.id)) return;
+    let g: MatchGame;
+    try {
+      g = await playMatch(a, b, n % games, { timeoutMs });
+    } catch (err) {
+      if (!(err instanceof PlayerFailedError)) throw err;
+      drop(err);
+      if (active().length < 2) throw err;
+      write(false);
+      return;
+    }
+    if (dropped.has(a.id) || dropped.has(b.id)) return;
     console.log(`  ${name(g.white.player)} – ${name(g.black.player)}  ${g.result.padEnd(7)} (${g.opening}, ${g.termination}, ${g.plies} moves)`);
     const list = partial.get(pair) ?? new Array<MatchGame>(games);
     list[g.game] = g;
@@ -148,9 +176,8 @@ try {
   });
 } catch (err) {
   if (!(err instanceof PlayerFailedError)) throw err;
-  skipped.push({ player: err.player, reason: err.message });
   write(false);
-  fail(`\nstopped: ${err.message}.\nThe ${done.size} finished pairs are in ${out} (marked incomplete). Fix the player and run the same command with --resume to play the rest.`);
+  fail(`\nstopped: fewer than two players left (${err.message}).\nThe ${done.size} finished pairs are in ${out} (marked incomplete). Fix the players and run the same command with --resume to play the rest.`);
 }
 
 const versus = write(true);

@@ -42,7 +42,6 @@ export function renderMarkdown(board: Leaderboard): string {
     table(board.entries),
     '',
   ];
-  for (const skipped of board.skipped) out.push(`- ${skipped.player} skipped: ${skipped.reason}`);
   return `${out.join('\n')}\n`;
 }
 

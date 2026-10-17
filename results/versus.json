@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-10-16T20:41:27.605Z",
+  "generatedAt": "2026-10-17T18:10:11.589Z",
   "benchVersion": 1,
   "complete": true,
   "players": [
-    "random",
-    "facts",
-    "greedy",
-    "minimax"
+    "microsoft-decision-1",
+    "jev-1-14",
+    "span-02",
+    "pplx-decider-v1-2",
+    "d1-ultra",
+    "drex-v2-0",
+    "gpt-6-luna-decisions",
+    "clef",
+    "mercury-decide",
+    "kev-4b"
   ],
   "settings": {
     "gamesPerPair": 24,
@@ -15,127 +21,556 @@
   },
   "entries": [
     {
-      "player": "minimax",
-      "name": "Minimax (3 ply)",
-      "kind": "rules",
-      "rating": 2065,
-      "margin": 102,
-      "games": 72,
-      "scorePct": 97.9,
-      "winPct": 97.2,
-      "drawPct": 1.4,
-      "lossPct": 1.4,
-      "fallbackPct": 0,
+      "player": "pplx-decider-v1-2",
+      "name": "pplx-decider-v1-2",
+      "kind": "decision",
+      "rating": 1635,
+      "margin": 27,
+      "games": 216,
+      "scorePct": 69.2,
+      "winPct": 46.8,
+      "drawPct": 44.9,
+      "lossPct": 8.3,
+      "fallbackPct": 0.1,
       "invalidPct": 0,
-      "meanLatencyMs": 9,
-      "costPerGame": 0
+      "meanLatencyMs": 409,
+      "costPerGame": 0.00141
     },
     {
-      "player": "greedy",
-      "name": "Greedy (1 ply)",
-      "kind": "rules",
-      "rating": 1683,
-      "margin": 79,
-      "games": 72,
-      "scorePct": 65.3,
-      "winPct": 63.9,
-      "drawPct": 2.8,
-      "lossPct": 33.3,
-      "fallbackPct": 0,
+      "player": "mercury-decide",
+      "name": "mercury-decide",
+      "kind": "decision",
+      "rating": 1610,
+      "margin": 27,
+      "games": 216,
+      "scorePct": 65.7,
+      "winPct": 43.1,
+      "drawPct": 45.4,
+      "lossPct": 11.6,
+      "fallbackPct": 0.4,
       "invalidPct": 0,
-      "meanLatencyMs": 0,
-      "costPerGame": 0
+      "meanLatencyMs": 379,
+      "costPerGame": 0.00181
     },
     {
-      "player": "facts",
-      "name": "Fact reader",
-      "kind": "rules",
-      "rating": 1382,
-      "margin": 77,
-      "games": 72,
-      "scorePct": 36.8,
-      "winPct": 36.1,
-      "drawPct": 1.4,
-      "lossPct": 62.5,
+      "player": "drex-v2-0",
+      "name": "drex-v2-0",
+      "kind": "decision",
+      "rating": 1578,
+      "margin": 26,
+      "games": 216,
+      "scorePct": 61.1,
+      "winPct": 34.7,
+      "drawPct": 52.8,
+      "lossPct": 12.5,
       "fallbackPct": 0,
       "invalidPct": 0,
-      "meanLatencyMs": 0,
-      "costPerGame": 0
+      "meanLatencyMs": 392,
+      "costPerGame": 0.00311
     },
     {
-      "player": "random",
-      "name": "Random mover",
-      "kind": "rules",
-      "rating": 870,
-      "margin": 61,
-      "games": 72,
-      "scorePct": 0,
-      "winPct": 0,
-      "drawPct": 0,
-      "lossPct": 100,
-      "fallbackPct": 0,
+      "player": "jev-1-14",
+      "name": "jev-1.14v",
+      "kind": "decision",
+      "rating": 1567,
+      "margin": 25,
+      "games": 216,
+      "scorePct": 59.5,
+      "winPct": 30.1,
+      "drawPct": 58.8,
+      "lossPct": 11.1,
+      "fallbackPct": 0.6,
       "invalidPct": 0,
-      "meanLatencyMs": 0,
-      "costPerGame": 0
+      "meanLatencyMs": 247,
+      "costPerGame": 0.00278
+    },
+    {
+      "player": "gpt-6-luna-decisions",
+      "name": "gpt-6-luna-decisions",
+      "kind": "decision",
+      "rating": 1562,
+      "margin": 26,
+      "games": 216,
+      "scorePct": 58.8,
+      "winPct": 33.3,
+      "drawPct": 50.9,
+      "lossPct": 15.7,
+      "fallbackPct": 1.2,
+      "invalidPct": 0,
+      "meanLatencyMs": 305,
+      "costPerGame": 0.00751
+    },
+    {
+      "player": "d1-ultra",
+      "name": "d1-ultra",
+      "kind": "decision",
+      "rating": 1554,
+      "margin": 25,
+      "games": 216,
+      "scorePct": 57.6,
+      "winPct": 26.4,
+      "drawPct": 62.5,
+      "lossPct": 11.1,
+      "fallbackPct": 1.1,
+      "invalidPct": 0,
+      "meanLatencyMs": 320,
+      "costPerGame": 0.00199
+    },
+    {
+      "player": "span-02",
+      "name": "span-02",
+      "kind": "decision",
+      "rating": 1457,
+      "margin": 26,
+      "games": 216,
+      "scorePct": 43.1,
+      "winPct": 11.6,
+      "drawPct": 63,
+      "lossPct": 25.5,
+      "fallbackPct": 0.1,
+      "invalidPct": 0,
+      "meanLatencyMs": 358,
+      "costPerGame": 0.00043
+    },
+    {
+      "player": "clef",
+      "name": "clef",
+      "kind": "decision",
+      "rating": 1449,
+      "margin": 24,
+      "games": 216,
+      "scorePct": 41.9,
+      "winPct": 11.6,
+      "drawPct": 60.6,
+      "lossPct": 27.8,
+      "fallbackPct": 0.1,
+      "invalidPct": 0,
+      "meanLatencyMs": 364,
+      "costPerGame": 0.00263
+    },
+    {
+      "player": "kev-4b",
+      "name": "kev-4b",
+      "kind": "decision",
+      "rating": 1317,
+      "margin": 33,
+      "games": 216,
+      "scorePct": 24.1,
+      "winPct": 4.6,
+      "drawPct": 38.9,
+      "lossPct": 56.5,
+      "fallbackPct": 0.9,
+      "invalidPct": 0,
+      "meanLatencyMs": 561,
+      "costPerGame": 0.00147
+    },
+    {
+      "player": "microsoft-decision-1",
+      "name": "microsoft-decision-1",
+      "kind": "decision",
+      "rating": 1272,
+      "margin": 30,
+      "games": 216,
+      "scorePct": 19,
+      "winPct": 2.3,
+      "drawPct": 33.3,
+      "lossPct": 64.4,
+      "fallbackPct": 1.7,
+      "invalidPct": 0,
+      "meanLatencyMs": 314,
+      "costPerGame": 0.00109
     }
   ],
   "headToHead": {
-    "random": {
-      "facts": {
-        "scorePct": 0,
+    "microsoft-decision-1": {
+      "jev-1-14": {
+        "scorePct": 18.8,
         "games": 24
       },
-      "greedy": {
-        "scorePct": 0,
+      "span-02": {
+        "scorePct": 22.9,
         "games": 24
       },
-      "minimax": {
-        "scorePct": 0,
-        "games": 24
-      }
-    },
-    "facts": {
-      "random": {
-        "scorePct": 100,
+      "pplx-decider-v1-2": {
+        "scorePct": 2.1,
         "games": 24
       },
-      "greedy": {
+      "d1-ultra": {
+        "scorePct": 14.6,
+        "games": 24
+      },
+      "drex-v2-0": {
         "scorePct": 10.4,
         "games": 24
       },
-      "minimax": {
-        "scorePct": 0,
+      "gpt-6-luna-decisions": {
+        "scorePct": 16.7,
+        "games": 24
+      },
+      "clef": {
+        "scorePct": 35.4,
+        "games": 24
+      },
+      "mercury-decide": {
+        "scorePct": 6.3,
+        "games": 24
+      },
+      "kev-4b": {
+        "scorePct": 43.8,
         "games": 24
       }
     },
-    "greedy": {
-      "random": {
-        "scorePct": 100,
+    "jev-1-14": {
+      "microsoft-decision-1": {
+        "scorePct": 81.3,
         "games": 24
       },
-      "facts": {
+      "span-02": {
+        "scorePct": 68.8,
+        "games": 24
+      },
+      "pplx-decider-v1-2": {
+        "scorePct": 56.3,
+        "games": 24
+      },
+      "d1-ultra": {
+        "scorePct": 47.9,
+        "games": 24
+      },
+      "drex-v2-0": {
+        "scorePct": 47.9,
+        "games": 24
+      },
+      "gpt-6-luna-decisions": {
+        "scorePct": 47.9,
+        "games": 24
+      },
+      "clef": {
+        "scorePct": 58.3,
+        "games": 24
+      },
+      "mercury-decide": {
+        "scorePct": 45.8,
+        "games": 24
+      },
+      "kev-4b": {
+        "scorePct": 81.3,
+        "games": 24
+      }
+    },
+    "span-02": {
+      "microsoft-decision-1": {
+        "scorePct": 77.1,
+        "games": 24
+      },
+      "jev-1-14": {
+        "scorePct": 31.3,
+        "games": 24
+      },
+      "pplx-decider-v1-2": {
+        "scorePct": 27.1,
+        "games": 24
+      },
+      "d1-ultra": {
+        "scorePct": 39.6,
+        "games": 24
+      },
+      "drex-v2-0": {
+        "scorePct": 33.3,
+        "games": 24
+      },
+      "gpt-6-luna-decisions": {
+        "scorePct": 31.3,
+        "games": 24
+      },
+      "clef": {
+        "scorePct": 43.8,
+        "games": 24
+      },
+      "mercury-decide": {
+        "scorePct": 39.6,
+        "games": 24
+      },
+      "kev-4b": {
+        "scorePct": 64.6,
+        "games": 24
+      }
+    },
+    "pplx-decider-v1-2": {
+      "microsoft-decision-1": {
+        "scorePct": 97.9,
+        "games": 24
+      },
+      "jev-1-14": {
+        "scorePct": 43.8,
+        "games": 24
+      },
+      "span-02": {
+        "scorePct": 72.9,
+        "games": 24
+      },
+      "d1-ultra": {
+        "scorePct": 56.3,
+        "games": 24
+      },
+      "drex-v2-0": {
+        "scorePct": 58.3,
+        "games": 24
+      },
+      "gpt-6-luna-decisions": {
+        "scorePct": 62.5,
+        "games": 24
+      },
+      "clef": {
+        "scorePct": 79.2,
+        "games": 24
+      },
+      "mercury-decide": {
+        "scorePct": 56.3,
+        "games": 24
+      },
+      "kev-4b": {
+        "scorePct": 95.8,
+        "games": 24
+      }
+    },
+    "d1-ultra": {
+      "microsoft-decision-1": {
+        "scorePct": 85.4,
+        "games": 24
+      },
+      "jev-1-14": {
+        "scorePct": 52.1,
+        "games": 24
+      },
+      "span-02": {
+        "scorePct": 60.4,
+        "games": 24
+      },
+      "pplx-decider-v1-2": {
+        "scorePct": 43.8,
+        "games": 24
+      },
+      "drex-v2-0": {
+        "scorePct": 54.2,
+        "games": 24
+      },
+      "gpt-6-luna-decisions": {
+        "scorePct": 50,
+        "games": 24
+      },
+      "clef": {
+        "scorePct": 56.3,
+        "games": 24
+      },
+      "mercury-decide": {
+        "scorePct": 43.8,
+        "games": 24
+      },
+      "kev-4b": {
+        "scorePct": 72.9,
+        "games": 24
+      }
+    },
+    "drex-v2-0": {
+      "microsoft-decision-1": {
         "scorePct": 89.6,
         "games": 24
       },
-      "minimax": {
-        "scorePct": 6.3,
+      "jev-1-14": {
+        "scorePct": 52.1,
+        "games": 24
+      },
+      "span-02": {
+        "scorePct": 66.7,
+        "games": 24
+      },
+      "pplx-decider-v1-2": {
+        "scorePct": 41.7,
+        "games": 24
+      },
+      "d1-ultra": {
+        "scorePct": 45.8,
+        "games": 24
+      },
+      "gpt-6-luna-decisions": {
+        "scorePct": 54.2,
+        "games": 24
+      },
+      "clef": {
+        "scorePct": 68.8,
+        "games": 24
+      },
+      "mercury-decide": {
+        "scorePct": 47.9,
+        "games": 24
+      },
+      "kev-4b": {
+        "scorePct": 83.3,
         "games": 24
       }
     },
-    "minimax": {
-      "random": {
-        "scorePct": 100,
+    "gpt-6-luna-decisions": {
+      "microsoft-decision-1": {
+        "scorePct": 83.3,
         "games": 24
       },
-      "facts": {
-        "scorePct": 100,
+      "jev-1-14": {
+        "scorePct": 52.1,
         "games": 24
       },
-      "greedy": {
+      "span-02": {
+        "scorePct": 68.8,
+        "games": 24
+      },
+      "pplx-decider-v1-2": {
+        "scorePct": 37.5,
+        "games": 24
+      },
+      "d1-ultra": {
+        "scorePct": 50,
+        "games": 24
+      },
+      "drex-v2-0": {
+        "scorePct": 45.8,
+        "games": 24
+      },
+      "clef": {
+        "scorePct": 66.7,
+        "games": 24
+      },
+      "mercury-decide": {
+        "scorePct": 37.5,
+        "games": 24
+      },
+      "kev-4b": {
+        "scorePct": 87.5,
+        "games": 24
+      }
+    },
+    "clef": {
+      "microsoft-decision-1": {
+        "scorePct": 64.6,
+        "games": 24
+      },
+      "jev-1-14": {
+        "scorePct": 41.7,
+        "games": 24
+      },
+      "span-02": {
+        "scorePct": 56.3,
+        "games": 24
+      },
+      "pplx-decider-v1-2": {
+        "scorePct": 20.8,
+        "games": 24
+      },
+      "d1-ultra": {
+        "scorePct": 43.8,
+        "games": 24
+      },
+      "drex-v2-0": {
+        "scorePct": 31.3,
+        "games": 24
+      },
+      "gpt-6-luna-decisions": {
+        "scorePct": 33.3,
+        "games": 24
+      },
+      "mercury-decide": {
+        "scorePct": 22.9,
+        "games": 24
+      },
+      "kev-4b": {
+        "scorePct": 62.5,
+        "games": 24
+      }
+    },
+    "mercury-decide": {
+      "microsoft-decision-1": {
         "scorePct": 93.8,
+        "games": 24
+      },
+      "jev-1-14": {
+        "scorePct": 54.2,
+        "games": 24
+      },
+      "span-02": {
+        "scorePct": 60.4,
+        "games": 24
+      },
+      "pplx-decider-v1-2": {
+        "scorePct": 43.8,
+        "games": 24
+      },
+      "d1-ultra": {
+        "scorePct": 56.3,
+        "games": 24
+      },
+      "drex-v2-0": {
+        "scorePct": 52.1,
+        "games": 24
+      },
+      "gpt-6-luna-decisions": {
+        "scorePct": 62.5,
+        "games": 24
+      },
+      "clef": {
+        "scorePct": 77.1,
+        "games": 24
+      },
+      "kev-4b": {
+        "scorePct": 91.7,
+        "games": 24
+      }
+    },
+    "kev-4b": {
+      "microsoft-decision-1": {
+        "scorePct": 56.3,
+        "games": 24
+      },
+      "jev-1-14": {
+        "scorePct": 18.8,
+        "games": 24
+      },
+      "span-02": {
+        "scorePct": 35.4,
+        "games": 24
+      },
+      "pplx-decider-v1-2": {
+        "scorePct": 4.2,
+        "games": 24
+      },
+      "d1-ultra": {
+        "scorePct": 27.1,
+        "games": 24
+      },
+      "drex-v2-0": {
+        "scorePct": 16.7,
+        "games": 24
+      },
+      "gpt-6-luna-decisions": {
+        "scorePct": 12.5,
+        "games": 24
+      },
+      "clef": {
+        "scorePct": 37.5,
+        "games": 24
+      },
+      "mercury-decide": {
+        "scorePct": 8.3,
         "games": 24
       }
     }
   },
-  "skipped": []
+  "skipped": [
+    {
+      "player": "classify-1",
+      "reason": "HTTP 400: ScaleDown state must be a string or an object with only text, document, and document_mime_type, including text or document"
+    },
+    {
+      "player": "solar-decide",
+      "reason": "solar-decide failed 5 calls in a row (last: HTTP 422: HTTP 422: {\"error\":{\"type\":\"validation_failed\",\"message\":\"question move: 41 candidates exceed the 26 single-to); its games were stopped so random fallback moves don't count as its play"
+    }
+  ]
 }

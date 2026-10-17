@@ -243,7 +243,6 @@ export function renderVersusMarkdown(v: Versus): string {
   const grid = [['', ...v.entries.map((e) => e.name)], ['---', ...ids.map(() => '---')]];
   for (const a of v.entries) grid.push([a.name, ...ids.map((b) => (b === a.player ? '–' : (v.headToHead[a.player]?.[b]?.scorePct.toFixed(1) ?? '')))]);
   out.push(grid.map((r) => `| ${r.join(' | ')} |`).join('\n'), '');
-  for (const s of v.skipped) out.push(`- ${s.player} skipped: ${s.reason}`);
   return `${out.join('\n')}\n`;
 }
 

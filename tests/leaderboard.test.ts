@@ -62,6 +62,6 @@ describe('percentages', () => {
     const md = renderMarkdown({ generatedAt: 'now', benchVersion: 1, settings: { gamesPerOpponent: 1, opponents: ['random'], maxPlies: 200, moveTimeoutMs: 10_000 }, entries: [rules, model], skipped: [{ player: 'x', reason: 'down' }] });
     expect(md).toMatch(/\| – \| Rules \| rules \| 100\.0 ± 49\.0 \| 100\.0 \| – \| – \|/);
     expect(md).toMatch(/\| 1 \| Model \| chat \|/);
-    expect(md).toMatch(/x skipped: down/);
+    expect(md).not.toMatch(/skipped/);
   });
 });

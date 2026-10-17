@@ -56,7 +56,7 @@ Give models short ids in `players.json`, or set `MODELS=a,b` in `.env` to play t
 | command                           | does                                                      |
 | --------------------------------- | --------------------------------------------------------- |
 | `npm run versus -- <a> <b> …`     | round robin between players                               |
-| `npm run versus -- --players all` | everyone vs everyone → `results/VERSUS.md`                |
+| `npm run versus -- --players all` | every model vs every model → `results/VERSUS.md`          |
 | `npm run bench -- <player>`       | one player vs the scripted opponents                      |
 | `npm run leaderboard`             | every player vs every opponent → `results/LEADERBOARD.md` |
 | `npm run models`                  | list available players                                    |
